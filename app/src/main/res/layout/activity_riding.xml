@@ -1,0 +1,158 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context="flit.com.helmet.RidingActivity"
+    android:keepScreenOn="true"
+    android:background="#000000"
+    >
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="120dp"
+            android:layout_height="80dp"
+            android:clickable="true"
+            android:onClick="onClickLeft"
+            android:background="#9b404040"
+
+            >
+            <ImageView
+                android:id="@+id/viewLeft"
+                android:layout_width="120dp"
+                android:layout_height="80dp"
+                android:background="@drawable/btn_direction"
+                android:scaleType="fitXY"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textLeft"
+                android:textSize="60dp"
+                android:text="◀"
+                android:layout_centerInParent="true"
+                />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="#000000"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            >
+
+
+
+            <TextView
+
+                android:layout_marginLeft="4dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:drawableLeft="@drawable/ic_place_grey600_24dp"
+                android:drawablePadding="4dp"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="위치 조회중"
+                android:id="@+id/textPlace" />
+        </LinearLayout>
+
+        <!--
+
+            android:background="#9b404040"
+        -->
+        <RelativeLayout
+            android:layout_width="120dp"
+            android:layout_height="80dp"
+            android:clickable="true"
+            android:onClick="onClickRight"
+            android:background="#9b404040"
+            >
+            <ImageView
+                android:layout_width="120dp"
+                android:layout_height="80dp"
+                android:id="@+id/viewRight"
+                android:scaleType="fitXY"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textRight"
+                android:textSize="60dp"
+                android:text="▶︎"
+                android:layout_centerInParent="true"
+                />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:id="@+id/linearLayout">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textSize="80sp"
+            android:text="0"
+            android:id="@+id/textSpeed"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="30sp"
+            android:text="km/h"
+            android:id="@+id/textSpeedKmh" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/linearLayout"
+        android:layout_marginLeft="16dp"
+        android:id="@+id/linearLayout2">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imgBean"
+            android:src="@drawable/ic_accessibility_grey600_36dp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imgEdison"
+            android:src="@drawable/edison_connecting" />
+    </LinearLayout>
+
+
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ic_settings_grey600_36dp"
+        android:id="@+id/imageButton"
+        android:onClick="onClickSettings"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="16dp"
+
+        />
+
+</RelativeLayout>
