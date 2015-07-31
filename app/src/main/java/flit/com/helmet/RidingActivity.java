@@ -68,6 +68,7 @@ public class RidingActivity extends AppCompatActivity
 
     private SharedPreferences prefs;
     private BluetoothDevice btDevice;
+    private boolean useLowSpeedBreak ;
 
     private Handler displayHandler = new Handler(){
         @Override
@@ -81,10 +82,9 @@ public class RidingActivity extends AppCompatActivity
             }
             updateBtStatus();
 //            Log.d(TAG, "handle : " + connection + " " + curSpeed);
-            if(connection!=null && curSpeed<10){
+            if(useLowSpeedBreak && connection!=null && curSpeed<10){
                 connection.write("S");
             }
-
 
             sendEmptyMessageDelayed(1, 1000);
         }
@@ -114,6 +114,7 @@ public class RidingActivity extends AppCompatActivity
         textRight = (TextView) findViewById(R.id.textRight);
         viewLeft = (ImageView)findViewById(R.id.viewLeft);
         viewRight = (ImageView)findViewById(R.id.viewRight);
+        useLowSpeedBreak = prefs.getBoolean("useLowSpeedBreak", true);
 
 
         curSpeed = maxSpeed = 0;
@@ -180,6 +181,7 @@ public class RidingActivity extends AppCompatActivity
     protected void onResume() {
         super.onResume();
         btAdapter = BluetoothAdapter.getDefaultAdapter();
+        useLowSpeedBreak = prefs.getBoolean("useLowSpeedBreak", true);
         updateBtStatus();
 
 

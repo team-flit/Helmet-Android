@@ -30,13 +30,20 @@
         android:onClick="onClickSettings"
         />
 
-
-    <android.support.design.widget.CoordinatorLayout
+    <CheckBox
         android:layout_width="match_parent"
-        android:layout_height="match_parent" >
+        android:layout_height="wrap_content"
+        android:text="Send Break signal when low speed(10km/h)."
+        android:id="@+id/useBreak"
+        android:checked="true" />
 
-    </android.support.design.widget.CoordinatorLayout>
+    <!--
+        <android.support.design.widget.CoordinatorLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
 
+        </android.support.design.widget.CoordinatorLayout>
+    -->
 
 
 </LinearLayout>
